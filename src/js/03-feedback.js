@@ -11,7 +11,6 @@ message.addEventListener('input', addData);
 submitButoon.addEventListener('click', sendData);
 
 checkData();
-
 function checkData() {
   const localData = JSON.parse(localStorage.getItem('feedback-form-state'));
   if (localData) {
