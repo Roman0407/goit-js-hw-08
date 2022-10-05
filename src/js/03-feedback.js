@@ -1,4 +1,5 @@
-const throttle = require 'lodash.throttle' ;
+
+const throttle = require('lodash.throttle');
 
 const form = document.querySelector('.feedback-form');
 const email = document.querySelector('input');
@@ -11,6 +12,7 @@ message.addEventListener('input', addData);
 submitButoon.addEventListener('click', sendData);
 
 checkData();
+
 function checkData() {
   const localData = JSON.parse(localStorage.getItem('feedback-form-state'));
   if (localData) {
@@ -21,9 +23,8 @@ function checkData() {
   }
 }
 
-const saveData = throttle(function () {
-  localStorage.setItem('feedback-form-state', JSON.stringify(data));
-}, 500);
+const saveData = throttle(function () {    localStorage.setItem('feedback-form-state', JSON.stringify(data));
+ }, 500);
 
 function addData(event) {
   data[this.name] = event.target.value;
